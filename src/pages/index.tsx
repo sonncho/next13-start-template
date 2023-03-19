@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import Head from 'next/head';
 
 export default function Home() {
@@ -9,7 +10,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>This is Main Page</main>
+      <main>
+        This is Main Page
+        <TestText colorType="primary">Primary</TestText>
+        <TestText colorType="warnint">Warning</TestText>
+        <TestText colorType="danger">Danger</TestText>
+        <TestText colorType="info">Global Variables test</TestText>
+      </main>
     </>
   );
 }
+
+const TestText = styled.div<{ colorType: string }>`
+  color: ${({ colorType }) => (colorType ? `var(--${colorType})` : 'var(--dark)')};
+`;
