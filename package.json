@@ -1,17 +1,20 @@
 {
   "name": "next13-template",
+  "description": "Simple Next.js version 13 starter template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "prettier src --write && eslint src --fix",
     "check-style": "prettier src --check",
     "check-lint": "eslint src --check",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
